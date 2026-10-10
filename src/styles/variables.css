@@ -1,0 +1,64 @@
+:root {
+  /* 🏴‍☠️ Adventure & Treasure Color Palette */
+  --color-primary: #b8860b; /* ذهبي معتق (Dark Goldenrod) */
+  --color-primary-dark: #8b6508; /* ذهبي غامق */
+  --color-secondary: #8b0000; /* أحمر ياقوتي (Ruby Red) */
+  --color-secondary-dark: #5c0000; /* أحمر داكن */
+  --color-accent: #d4af37; /* ذهبي لامع (Gold) */
+  --color-accent-dark: #aa8c2c;
+  --color-success: #2e8b57; /* أخضر زمردي (Sea Green) */
+  --color-success-dark: #006400;
+  --color-danger: #b22222; /* أحمر ناري (Firebrick) */
+  --color-danger-dark: #8b0000;
+
+  /* 📜 Background & Surfaces (Wood & Parchment) */
+  --color-bg-base: #2e1d0f; /* خشب داكن (Dark Wood) */
+  --color-surface-solid: #fff8dc; /* ورق بردي (Cornsilk) */
+  --color-surface-glass: rgba(255, 248, 220, 0.95); /* خلفية كروت تشبه الورق القديم */
+  --color-surface-glass-light: rgba(255, 248, 220, 1);
+  --color-surface-glass-heavy: rgba(255, 248, 220, 1);
+
+  /* 📝 Text Colors */
+  --color-text-main: #3e2723; /* نص بني داكن يناسب الورق الفاتح */
+  --color-text-inverted: #fff8dc; /* نص فاتح يناسب الخلفيات الخشبية */
+  --color-text-muted: rgba(62, 39, 35, 0.7); /* نص بني باهت */
+
+  /* 📏 Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  /* 📦 Radii (Less rounded for Wood/Paper feel) */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-pill: 9999px;
+
+  /* 🔠 Typography */
+  --font-sans: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* 🌟 Shadows, Glows & 3D Depths */
+  --shadow-flat: 0 8px 16px rgba(0, 0, 0, 0.4);
+  --shadow-glow-primary: 0 0 20px rgba(184, 134, 11, 0.6); /* توهج ذهبي */
+  --shadow-glow-secondary: 0 0 20px rgba(139, 0, 0, 0.6); /* توهج ياقوتي */
+  --shadow-glass: 0 10px 25px rgba(0, 0, 0, 0.5); /* ظل داكن وعميق للخشب */
+  
+  /* Button Depths (Physical tactile feel) */
+  --depth-primary: 0 6px 0 var(--color-primary-dark);
+  --depth-secondary: 0 6px 0 var(--color-secondary-dark);
+  --depth-success: 0 6px 0 var(--color-success-dark);
+  --depth-surface: 0 6px 0 rgba(0, 0, 0, 0.3);
+
+  /* 💎 Borders */
+  --border-glass: 2px solid #b8860b; /* إطار ذهبي بدلاً من الزجاج */
+  --border-glass-light: 2px solid #d4af37;
+
+  /* 🎬 Animations */
+  --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-smooth: 0.25s ease;
+}

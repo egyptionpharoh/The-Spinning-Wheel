@@ -1,0 +1,45 @@
+/* استيراد خط Cairo لإضفاء طابع عصري واحترافي */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 🎛️ Game Inputs (Inset Glass) */
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-glass);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  background-color: rgba(0, 0, 0, 0.2); /* تجويف مظلم */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-smooth);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800; /* خطوط أكثر سماكة تتناسب مع الألعاب */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* إزالة الإطار الافتراضي المزعج عند الضغط، سنقوم بتصميمه بشكل أفضل لاحقاً */
+:focus {
+  outline: none;
+}

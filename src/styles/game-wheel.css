@@ -1,0 +1,167 @@
+/* 🎮 Game Panels (Glassmorphism Base) */
+.game-panel {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-glass);
+  border: var(--border-glass);
+  margin-top: var(--space-6);
+  animation: slideUpFade var(--transition-spring);
+}
+
+.panel-title {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: var(--space-5);
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.student-badge {
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.highlight-text {
+  color: var(--color-accent);
+  text-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
+}
+
+/* 🔮 The Hologram Orb (The Wheel Alternative) */
+.hologram-orb {
+  margin: var(--space-6) auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 4px solid rgba(138, 43, 226, 0.3);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 10px 20px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.orb-core {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  padding: var(--space-4);
+}
+
+/* حركة الدوران (Spinning State) */
+.hologram-orb.spinning {
+  border-color: var(--color-accent);
+  box-shadow: inset 0 0 40px rgba(255, 204, 0, 0.2), 0 0 30px rgba(255, 204, 0, 0.4);
+}
+
+.hologram-orb.spinning::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, transparent, transparent, var(--color-accent));
+  animation: spinRadar 0.6s linear infinite;
+}
+
+.hologram-orb.spinning::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: var(--color-bg-base);
+  border-radius: 50%;
+  z-index: 5;
+}
+
+@keyframes spinRadar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* الكشف عن النتيجة (Reveal State) */
+.hologram-orb.revealed {
+  border-color: var(--color-success);
+  box-shadow: inset 0 0 50px rgba(0, 230, 118, 0.2), 0 0 40px rgba(0, 230, 118, 0.4);
+  transform: scale(1.05);
+}
+
+.result-container {
+  animation: popInBounce 0.6s var(--transition-spring);
+}
+
+.result-label {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.result-name {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-success);
+  text-shadow: 0 0 16px rgba(0, 230, 118, 0.5);
+  line-height: 1.1;
+}
+
+@keyframes popInBounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* 🎛️ Evaluation Buttons */
+.evaluation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.eval-btn {
+  flex: 1 1 calc(33.333% - var(--space-3));
+  min-width: 140px;
+  font-size: 1rem;
+  padding: var(--space-3) var(--space-2);
+}
+
+/* ألوان الأزرار المتخصصة بتقنية 3D */
+.btn-success {
+  background: linear-gradient(135deg, #00e676, #00b359);
+  box-shadow: 0 6px 0 #008040, 0 8px 16px rgba(0,0,0,0.3);
+}
+.btn-success-dark {
+  background: linear-gradient(135deg, #00b359, #008040);
+  box-shadow: 0 6px 0 #004d26, 0 8px 16px rgba(0,0,0,0.3);
+}
+.btn-danger {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  box-shadow: 0 6px 0 #990000, 0 8px 16px rgba(0,0,0,0.3);
+}
+.btn-warning {
+  background: linear-gradient(135deg, #ffbb33, #ff8800);
+  box-shadow: 0 6px 0 #cc6600, 0 8px 16px rgba(0,0,0,0.3);
+}
+.btn-neutral {
+  background: linear-gradient(135deg, #9e9e9e, #616161);
+  box-shadow: 0 6px 0 #424242, 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.eval-btn:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 transparent, 0 2px 4px rgba(0,0,0,0.2);
+}

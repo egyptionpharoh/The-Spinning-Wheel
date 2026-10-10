@@ -1,0 +1,91 @@
+.setup-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+  position: relative;
+  z-index: 1; /* لضمان ظهوره فوق الكرات المضيئة في الخلفية */
+}
+
+.setup-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  animation: slideDownFade var(--transition-spring);
+}
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.setup-header-title {
+  font-size: 3rem; /* تكبير الخط ليلائم الألعاب */
+  color: #fff;
+  text-shadow: var(--shadow-glow-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: 1px;
+}
+
+.setup-header-desc {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .setup-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* 🃏 Game Card (Glassmorphism) */
+.setup-card {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-glass);
+  border: var(--border-glass);
+  transition: transform var(--transition-spring), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.setup-card:hover {
+  transform: translateY(-4px); /* رفع البطاقة للأعلى */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  border: var(--border-glass-light);
+}
+
+.setup-card-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-glass);
+  color: var(--color-accent); /* تمييز العناوين بلون اللعبة الثانوي */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.student-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+  color: white;
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  margin-left: var(--space-2);
+  box-shadow: var(--shadow-glow-secondary);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.setup-actions {
+  margin-top: var(--space-6);
+  display: flex;
+  justify-content: flex-end;
+}
